@@ -5,11 +5,29 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 export const routes: Routes = [
     {
+        path: 'dashboard',
+        component: DashboardComponent
+    },
+    {
         path: 'characters',
         component: DisneyCharactersComponent
+    },
+    {
+        path: 'character/:id'
+        component: SingleCharacterComponent
+    },
+    {
+        path: 'deck',
+        component: DeckComponent
+    },
+    {
+        path: 'about',
+        component: AboutUsComponent
     },
     {
         path: '**',
         component: PageNotFoundComponent
     }
 ];
+
+
