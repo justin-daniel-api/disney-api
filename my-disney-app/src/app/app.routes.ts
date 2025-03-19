@@ -10,7 +10,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 
 export const routes: Routes = [
     {
-        path: 'dashboard',
+        path: '',
         component: DashboardComponent
     },
     {

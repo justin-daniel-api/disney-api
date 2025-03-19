@@ -24,6 +24,19 @@ export class DisneyCharactersComponent implements OnInit {
   characters: any[] = [];
 
   ngOnInit(): void {
+    this.getCharacters();
+  }
+
+addToDeck(): any {
+  
+}
+
+viewDetails(): any {
+
+}
+
+
+  getCharacters(): void {
     this.http.get('https://api.disneyapi.dev/character').subscribe((data: any) => {
       this.characters = data.data;
     });
