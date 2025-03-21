@@ -2,17 +2,31 @@
     <p class="h1">Prime time is now</p>
 </div>
 
-<div class="container p-3 bg-primary-subtle" id="even" style="height: 350px;">
-    <img [src]="image_2" alt="castle">
-    <p>ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such amazing designs.
-    </p>
+<div class="container p-3 bg-primary-subtle row" style="height: 400px;" id="even">
+    <img [ngSrc]="image_2" alt="castle" width="200" height="370" class="col-sm">
+    <div class="col-sm">
+        <p>ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+            amazing designs.
+        </p>
+        <button class="btn btn-primary">View Characters</button>
+    </div>
+
 </div>
 
 <br>
 
-<div class="container p-3 bg-secondary-subtle" id="odd" style="height: 350px;">
-    <img [src]="image_1" alt="starwars chewy">
-    <p>ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such amazing designs.
-    </p>
-</div>
+<div class="container p-3 bg-secondary-subtle row" style="height: 400px;" id="odd">
+    <div class="col-sm">
+        <p>ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow
+            such amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+            amazing designs.
+        </p>
+        <button class="btn btn-secondary">Random Character</button>
+    </div>
+    <img [ngSrc]="image_1" alt="starwars chewy" width="250" height="375" class="col-sm">
 
+</div>
