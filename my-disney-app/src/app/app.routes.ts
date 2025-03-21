@@ -18,7 +18,7 @@ export const routes: Routes = [
         component: DisneyCharactersComponent
     },
     {
-        path: 'character/:id',
+        path: 'character/:name',
         component: SingleCharacterComponent
     },
     {
