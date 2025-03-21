@@ -1,33 +1,27 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-disney-characters',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './disney-characters.component.html',
-  styleUrl: './disney-characters.component.css',
+  styleUrls: ['./disney-characters.component.css'],
 })
 export class DisneyCharactersComponent implements OnInit {
-  private http = inject(HttpClient);
-  private router = inject(Router);
   private characterService = inject(CharacterService);
+  private router = inject(Router);
 
   characters: any[] = [];
-
-  defaultNoImage = "assets/images/default-no-image.jpg";
-
+  defaultNoImage = 'assets/images/default-no-image.jpg';
 
   ngOnInit(): void {
-    this.getCharacters();
-  }
-
-  getCharacters(): void {
-    this.http.get('https://api.disneyapi.dev/character').subscribe((data: any) => {
-      this.characters = data.data;
+    // Fetch characters from the service and set them
+    this.characterService.getAllCharacters().subscribe((data: any) => {
+      this.characters = data.data;  // Assuming 'data' is the response body
+      this.characterService.setCharacters(this.characters);  // Store characters in service
     });
   }
 
