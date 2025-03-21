@@ -1,9 +1,14 @@
-import { IMAGE_CONFIG, NgOptimizedImage } from '@angular/common';
+import { CommonModule, IMAGE_CONFIG, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [NgOptimizedImage],
+  imports: [
+    NgOptimizedImage,
+    RouterModule,
+    CommonModule
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
   providers: [
