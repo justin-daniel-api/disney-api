@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  image_2 = "assets/images/dashboard-1.jpg";
+  image_1 = "assets/images/dashboard-2.jpg";
 }

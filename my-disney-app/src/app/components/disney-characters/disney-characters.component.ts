@@ -23,6 +23,9 @@ export class DisneyCharactersComponent implements OnInit {
   private http = inject(HttpClient);
   characters: any[] = [];
 
+  defaultNoImage = "assets/images/default-no-image.jpg";
+
+
   ngOnInit(): void {
     this.getCharacters();
   }
