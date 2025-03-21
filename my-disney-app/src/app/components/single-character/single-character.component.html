@@ -1,1 +1,58 @@
-<p>single-character works!</p>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card shadow-sm">
+          <img
+            [src]="character.imageUrl || defaultNoImage"
+            class="card-img-top"
+            alt="{{ character.name }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ character.name }}</h5>
+  
+            <!-- Films -->
+            <p *ngIf="character.films && character.films.length > 0; else noFilms">
+              <strong>Films:</strong> {{ character.films.join(', ') }}
+            </p>
+            <ng-template #noFilms>
+              <p class="text-muted">No films available.</p>
+            </ng-template>
+  
+            <!-- Short Films -->
+            <p *ngIf="character.shortFilms && character.shortFilms.length > 0; else noShortFilms">
+              <strong>Short Films:</strong> {{ character.shortFilms.join(', ') }}
+            </p>
+            <ng-template #noShortFilms>
+              <p class="text-muted">No short films available.</p>
+            </ng-template>
+  
+            <!-- TV Shows -->
+            <p *ngIf="character.tvShows && character.tvShows.length > 0; else noTvShows">
+              <strong>TV Shows:</strong> {{ character.tvShows.join(', ') }}
+            </p>
+            <ng-template #noTvShows>
+              <p class="text-muted">No TV shows available.</p>
+            </ng-template>
+  
+            <!-- Allies -->
+            <p *ngIf="character.allies && character.allies.length > 0; else noAllies">
+              <strong>Allies:</strong> {{ character.allies.join(', ') }}
+            </p>
+            <ng-template #noAllies>
+              <p class="text-muted">No allies available.</p>
+            </ng-template>
+  
+            <!-- Enemies -->
+            <p *ngIf="character.enemies && character.enemies.length > 0; else noEnemies">
+              <strong>Enemies:</strong> {{ character.enemies.join(', ') }}
+            </p>
+            <ng-template #noEnemies>
+              <p class="text-muted">No enemies available.</p>
+            </ng-template>
+  
+            <a [href]="character.sourceUrl" class="btn btn-primary" target="_blank">View Source</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

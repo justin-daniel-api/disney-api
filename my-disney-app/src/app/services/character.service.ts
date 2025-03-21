@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CharacterService {
   private characters: any[] = [];
@@ -27,6 +27,24 @@ export class CharacterService {
     return this.http.get<any>('https://api.disneyapi.dev/character');
   }
 
+  // Method to fetch character details by name
+
+  getCharacterByName(name: string): Observable<any> {
+    return new Observable((observer) => {
+      const character = this.characters.find(
+        (char) => char.name.toLowerCase() === name.toLowerCase()
+      );
+
+      if (character) {
+        observer.next(character);
+      } else {
+        observer.error('Character not found');
+      }
+
+      observer.complete();
+    });
+  }
+
   // Save characters fetched from API
   setCharacters(characters: any[]): void {
     this.characters = characters;
@@ -46,9 +64,9 @@ export class CharacterService {
   addToDeck(character: any, characters: any[]): void {
     this.deck.push(character);
     this.deckSubject.next(this.deck);
-    localStorage.setItem('deck', JSON.stringify(this.deck));  // Save to localStorage
+    localStorage.setItem('deck', JSON.stringify(this.deck)); // Save to localStorage
 
-    const index = characters.findIndex(c => c._id === character._id);
+    const index = characters.findIndex((c) => c._id === character._id);
     if (index !== -1) {
       characters.splice(index, 1); // Remove from characters list
     }
@@ -56,11 +74,11 @@ export class CharacterService {
 
   // Remove from deck
   removeFromDeck(character: any, deck: any[]): void {
-    const index = deck.findIndex(c => c._id === character._id);
+    const index = deck.findIndex((c) => c._id === character._id);
     if (index !== -1) {
       deck.splice(index, 1); // Remove from deck
       this.deckSubject.next(this.deck);
-      localStorage.setItem('deck', JSON.stringify(this.deck));  // Save to localStorage
+      localStorage.setItem('deck', JSON.stringify(this.deck)); // Save to localStorage
     }
     this.characters.push(character); // Add it back to the characters list
   }
