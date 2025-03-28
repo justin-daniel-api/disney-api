@@ -1,15 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
+import { Router } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-disney-characters',
   standalone: true,
-  imports: [
-    CommonModule,
-    NgOptimizedImage,
-  ],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './disney-characters.component.html',
   styleUrls: ['./disney-characters.component.css'],
 })
@@ -21,15 +18,19 @@ export class DisneyCharactersComponent implements OnInit {
   defaultNoImage = 'assets/images/default-no-image.jpg';
 
   ngOnInit(): void {
-    // Fetch characters from the service and set them
-    this.characterService.getAllCharacters().subscribe((data: any) => {
-      this.characters = data.data;  // Assuming 'data' is the response body
-      this.characterService.setCharacters(this.characters);  // Store characters in service
+    // Subscribe to characters from the service
+    this.characterService.characters$.subscribe((characters) => {
+      this.characters = characters;
     });
+
+    // If no characters are loaded yet, fetch them once
+    if (this.characterService.getCharacters().length === 0) {
+      this.characterService.fetchCharacters();
+    }
   }
 
   addToDeck(character: any): void {
-    this.characterService.addToDeck(character, this.characters);
+    this.characterService.addToDeck(character);
   }
 
   viewDetails(character: any): void {
