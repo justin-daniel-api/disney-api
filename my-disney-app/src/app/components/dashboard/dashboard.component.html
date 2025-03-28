@@ -2,7 +2,7 @@
     <p class="h2 text-center mt-2 bungee-tint-regular">Prime time is now</p>
 </div>
 
-<div class="container p-3 bg-primary-subtle row dashboard-card" id="even">
+<div class="p-3 row dashboard-card" id="even">
     <img [ngSrc]="image_2" alt="castle" width="200" height="370" class="col-sm">
     <div class="col-sm">
         <p>ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
@@ -17,16 +17,17 @@
 
 <br>
 
-<div class="container p-3 bg-secondary-subtle row" style="height: 400px;" id="odd">
+<div class="p-3 bg-secondary-subtle row" style="height: 400px;" id="odd">
     <div class="col-sm">
-        <p>ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow
-            such amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-            amazing designs.
-        </p>
-        <button class="btn btn-primary" routerLink="characters">Update: Random Character</button>
+        <div class="row">
+            <p class="col-sm">ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow
+                such amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+                amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+                amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
+                amazing designs.
+            </p>
+            <button class="btn btn-primary col-sm" routerLink="characters">Update: Random Character</button>
+        </div>
     </div>
     <img [ngSrc]="image_1" alt="starwars chewy" width="250" height="375" class="col-sm">
-
 </div>
