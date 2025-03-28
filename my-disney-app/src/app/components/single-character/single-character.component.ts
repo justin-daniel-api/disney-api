@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-single-character',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './single-character.component.html',
   styleUrls: ['./single-character.component.css'],
 })
