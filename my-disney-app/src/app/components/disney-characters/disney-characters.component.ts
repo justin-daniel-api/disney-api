@@ -1,12 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-disney-characters',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    NgOptimizedImage,
+  ],
   templateUrl: './disney-characters.component.html',
   styleUrls: ['./disney-characters.component.css'],
 })
