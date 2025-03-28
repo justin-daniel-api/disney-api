@@ -1,38 +1,22 @@
 <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-4 mb-3" *ngFor="let character of characters">
-
-        <div class="card h-100 shadow-sm border border-dark"
-        *ngIf="character.imageUrl else noImages"  
-        >
-          <img [ngSrc]="character.imageUrl" class="card-img-top border" alt="{{ character.name }}" *ngIf="character.imageUrl" 
-          width="325" height="225"
-          >
-          <div class="card-body text-left">
-            <h5 class="card-title">{{ character.name }}</h5>
-            
-          </div>
-          <div class="card-footer d-flex justify-content-start gap-3">
-            <button class="btn btn-primary" (click)="addToDeck(character)">Add to Deck</button>
-            <button class="btn btn-secondary" (click)="viewDetails(character)">Single View</button>
-          </div>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let character of characters">
+      <div class="card h-100 shadow-sm border border-dark">
+        <img
+          [ngSrc]="character.imageUrl || defaultNoImage"
+          class="card-img-top border"
+          alt="{{ character.name }}"
+          width="325"
+          height="225"
+        />
+        <div class="card-body text-left">
+          <h5 class="card-title">{{ character.name }}</h5>
         </div>
-
-        <ng-template #noImages>
-          <div class="card h-100 shadow-sm">
-            <img [ngSrc]="defaultNoImage" class="card-img-top" alt="{{ character.name }}" width="325" height="225"
-            >
-            <div class="card-body text-center">
-              <h5 class="card-title">{{ character.name }}</h5>
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-              <button class="btn btn-primary">Add to Deck</button>
-              <button class="btn btn-secondary">View Details</button>
-            </div>
-          </div>
-        </ng-template>
-        
-
+        <div class="card-footer d-flex justify-content-start gap-3">
+          <button class="btn btn-primary" (click)="addToDeck(character)">Add to Deck</button>
+          <button class="btn btn-secondary" (click)="viewDetails(character)">Single View</button>
+        </div>
       </div>
     </div>
   </div>
+</div>
