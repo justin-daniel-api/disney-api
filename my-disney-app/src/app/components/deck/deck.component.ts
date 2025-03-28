@@ -18,14 +18,14 @@ export class DeckComponent implements OnInit {
   defaultNoImage = 'assets/images/default-no-image.jpg';
 
   ngOnInit(): void {
-    // Subscribe to deck changes from the CharacterService
+    // Subscribe to deck updates
     this.characterService.deck$.subscribe((deck) => {
-      this.deck = deck;  // Update deck when it's changed
+      this.deck = deck;
     });
   }
 
   removeFromDeck(character: any): void {
-    this.characterService.removeFromDeck(character, this.deck);
+    this.characterService.removeFromDeck(character);
   }
 
   viewDetails(character: any): void {
