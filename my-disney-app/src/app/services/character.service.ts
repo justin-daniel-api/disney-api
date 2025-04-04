@@ -26,6 +26,15 @@ export class CharacterService {
     });
   }
 
+  fetchPages(page: number, pageSize: number) {
+    this.http.get<any>(`https://api.disneyapi.dev/character?page=${page}&pageSize=${pageSize}`).subscribe(
+      (data)=> {
+        this.characters = data.data || [];
+        this.charactersSubject.next(this.characters);
+      }
+    )
+  }
+
   // Get characters from the stored array
   getCharacters(): any[] {
     return this.characters;
