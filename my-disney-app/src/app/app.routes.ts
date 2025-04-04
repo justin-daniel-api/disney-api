@@ -5,8 +5,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { DeckComponent } from './components/deck/deck.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SingleCharacterComponent } from './components/single-character/single-character.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
-
 
 export const routes: Routes = [
     {
@@ -24,10 +22,6 @@ export const routes: Routes = [
     {
         path: 'deck',
         component: DeckComponent
-    },
-    {
-        path: 'about',
-        component: AboutUsComponent
     },
     {
         path: '**',
