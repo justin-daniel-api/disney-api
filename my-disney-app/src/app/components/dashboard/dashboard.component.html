@@ -1,33 +1,39 @@
-<div>
-    <p class="h2 text-center mt-3 bungee-tint-regular">Prime time is now</p>
-</div>
-
-<div class="p-3 row dashboard-card" id="even">
-    <img [ngSrc]="image_2" alt="castle" width="200" height="370" class="col-sm">
-    <div class="col-sm">
-        <p>ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-            amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-            amazing designs.
+<div class="container">
+    <div>
+        <p class="h2 text-center mt-3 bungee-tint-regular">
+            Welcome To Disney
         </p>
-        <button class="btn btn-primary" routerLink="characters">View Characters</button>
     </div>
-
-</div>
-
-<br>
-
-<div class="p-3 bg-secondary-subtle row" style="height: 400px;" id="odd">
-    <div class="col-sm">
-        <div class="row">
-            <p class="col-sm">ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow
-                such amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-                amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-                amazing designs. ipsum lorem, click below to see lorem ipsum introduces disney to all the magical people here. Wow such
-                amazing designs.
+    
+    <div class="p-3 row dashboard-card" id="even">
+        <img [ngSrc]="image_2" alt="castle" width="200" height="370" class="col-sm">
+        <div class="col-sm">
+            <p class="h3">
+                Check out Disney Characters
             </p>
-            <button class="btn btn-primary col-sm" routerLink="characters">Update: Random Character</button>
+            <p>
+                A good way to be introduced to new disney shows and characters that you may not have known existed since the inception of Disney and their animations
+            </p>
+                        
+            <button class="btn btn-primary justify-content-end" routerLink="characters">
+                View Characters
+            </button>
         </div>
+    
     </div>
-    <img [ngSrc]="image_1" alt="starwars chewy" width="250" height="375" class="col-sm">
+    
+    <div class="p-3 row dashboard-card" id="odd">
+        <div class="col-sm">
+                <p class="h3">
+                    Build your own deck
+                </p>
+                <p>
+                    Add the characters and show off your favorites toons, check out their biographies and share with others!
+                </p>
+                <div>
+                    <button class="btn btn-primary col-sm" routerLink="deck">View Deck</button>
+                </div>
+        </div>
+        <img [ngSrc]="image_1" alt="starwars chewy" width="250" height="375" class="col-sm">
+    </div>
 </div>
