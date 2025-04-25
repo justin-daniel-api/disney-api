@@ -31,8 +31,14 @@ Find new disney character that you didn't know about before with our app.
 - **Components:** Components were used to store specific parts of the application's functionality, in accordance with proper Angular file structure.
 - **Routing:** The application uses angular routing for navigation between the app's components, in accordance with proper Angular file structure.
 
-## On Arrival 
 
+## Docker Set Up
+
+docker build -t angular-dev .
+
+docker run -p 4200:4200 angular-dev
+
+## On Arrival 
 Ensure to run the following commands 
 
 1. `npm i` 
