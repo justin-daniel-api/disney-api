@@ -38,7 +38,7 @@ Ensure to run the following commands
 1. `npm i` 
 2. `node server/seed.js` 
 3. `npm run server-dev`
-4. In the public folder, run `npx start`
+4. In the public folder, run `npx ng start`
 
 ## License
 
